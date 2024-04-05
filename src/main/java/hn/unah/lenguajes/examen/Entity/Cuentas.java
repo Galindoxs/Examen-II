@@ -35,6 +35,6 @@ public class Cuentas {
     @JoinColumn(name = "dni", referencedColumnName = "dni")
     private Cliente cliente;
 
-    @OneToMany
+    @OneToMany(mappedBy = "cuentas")
     private List<Movimientos> movimientos;
 }

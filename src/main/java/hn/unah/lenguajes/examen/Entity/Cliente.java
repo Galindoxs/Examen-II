@@ -29,7 +29,7 @@ public class Cliente {
     @OneToOne(mappedBy = "cliente")
     private Direccion direccion;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
     private List<Cuentas> cuentas;
 }
 
