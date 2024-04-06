@@ -3,6 +3,7 @@ package hn.unah.lenguajes.examen.Entity;
 import java.time.LocalDate;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -26,15 +27,15 @@ public class Cuentas {
     @Column(name = "fechaapertura")
     private LocalDate fechaApertura;
 
-    private int estado;
+    private boolean estado;
 
     @Column(name = "sobregiro")
-    private int sobreGiro;
+    private boolean sobreGiro;
 
     @ManyToOne
     @JoinColumn(name = "dni", referencedColumnName = "dni")
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "cuentas")
+    @OneToMany(mappedBy = "cuentas",cascade = CascadeType.ALL)
     private List<Movimientos> movimientos;
 }

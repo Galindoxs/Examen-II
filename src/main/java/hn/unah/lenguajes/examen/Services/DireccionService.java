@@ -4,5 +4,5 @@ import hn.unah.lenguajes.examen.Entity.Direccion;
 
 public interface DireccionService {
     
-    public Direccion creaDireccion(Direccion direccion, String dni);
+    public Direccion crearDireccion(Direccion direccion, String dni);
 }
